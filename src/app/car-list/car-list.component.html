@@ -1,0 +1,57 @@
+<div>
+    <h2>Cars</h2>
+
+
+    <ul>
+        <li *ngFor="let car of cars" (click)="onSelect(car)">
+            {{ car.year }} {{ car.model }} ({{ car.licensePlate }})
+        </li>
+    </ul>
+
+    <div *ngIf="selectedCar">
+        <h3>Edit Car</h3>
+        <label>Year: </label>
+        <input name="year" [(ngModel)]="selectedCar.year" />
+        <br />
+
+        <label>Model: </label>
+        <input name="model" [(ngModel)]="selectedCar.model" />
+        <br />
+
+        <label>License Plate: </label>
+        <input name="licensePlate" [(ngModel)]="selectedCar.licensePlate" />
+        <br />
+
+        <label>Color: </label>
+        <input name="color" [(ngModel)]="selectedCar.color" />
+        <br />
+
+        <button (click)="updateCar()">Update</button>
+        <button (click)="deleteCar()">Delete</button>
+    </div>
+
+    <div>
+        <h3>Add New Car</h3>
+        <label for="token">Token:</label>
+        <input type="text" id="token" name="token" [(ngModel)]="token" required>
+        <br>
+
+        <label>Year: </label>
+        <input name="year" [(ngModel)]="newCar.year" />
+        <br />
+
+        <label>Model: </label>
+        <input name="model" [(ngModel)]="newCar.model" />
+        <br />
+
+        <label>License Plate: </label>
+        <input name="licensePlate" [(ngModel)]="newCar.licensePlate" />
+        <br />
+
+        <label>Color: </label>
+        <input name="color" [(ngModel)]="newCar.color" />
+        <br />
+
+        <button (click)="addCar()">Add</button>
+    </div>
+</div>
