@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AppModule } from './app.module';
 import { CarListComponent } from './car-list/car-list.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
