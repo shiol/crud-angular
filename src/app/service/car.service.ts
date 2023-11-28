@@ -18,7 +18,7 @@ export class CarService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.get<Car[]>(this.apiUrl, { headers: headers });
+    return this.http.get<Car[]>(this.apiUrl, { headers: headers, withCredentials: true });
   }
 
   getCarById(id: number): Observable<Car> {
@@ -30,7 +30,7 @@ export class CarService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.post<Car>(this.apiUrl, car, { headers: headers });
+    return this.http.post<Car>(this.apiUrl, car, { headers: headers, withCredentials: true });
   }
 
   updateCar(car: Car): Observable<Car> {

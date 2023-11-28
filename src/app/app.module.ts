@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [FormsModule],
-    declarations: [AppModule],
+    declarations: [],
     exports: [],
 })
 export class AppModule { }
