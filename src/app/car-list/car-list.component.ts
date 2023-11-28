@@ -41,7 +41,7 @@ export class CarListComponent implements OnInit {
 
   updateCar(): void {
     if (this.selectedCar) {
-      this.carService.updateCar(this.selectedCar).subscribe(() => {
+      this.carService.updateCar(this.selectedCar, this.token).subscribe(() => {
         this.loadCars();
       });
     }
@@ -49,7 +49,7 @@ export class CarListComponent implements OnInit {
 
   deleteCar(): void {
     if (this.selectedCar) {
-      this.carService.deleteCar(this.selectedCar.id!).subscribe(() => {
+      this.carService.deleteCar(this.selectedCar.id!, this.token).subscribe(() => {
         this.loadCars();
       });
     }

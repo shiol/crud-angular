@@ -21,8 +21,12 @@ export class CarService {
     return this.http.get<Car[]>(this.apiUrl, { headers: headers, withCredentials: true });
   }
 
-  getCarById(id: number): Observable<Car> {
-    return this.http.get<Car>(`${this.apiUrl}/${id}`);
+  getCarById(id: number, token: string): Observable<Car> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.get<Car>(`${this.apiUrl}/${id}`, { headers: headers, withCredentials: true });
   }
 
   addCar(car: Car, token: string): Observable<Car> {
@@ -33,11 +37,19 @@ export class CarService {
     return this.http.post<Car>(this.apiUrl, car, { headers: headers, withCredentials: true });
   }
 
-  updateCar(car: Car): Observable<Car> {
-    return this.http.put<Car>(`${this.apiUrl}/${car.id}`, car);
+  updateCar(car: Car, token: string): Observable<Car> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.put<Car>(`${this.apiUrl}/${car.id}`, car, { headers: headers, withCredentials: true });
   }
 
-  deleteCar(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  deleteCar(id: number, token: string): Observable<void> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers: headers, withCredentials: true });
   }
 }
