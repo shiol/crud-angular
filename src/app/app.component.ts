@@ -12,7 +12,7 @@ import { CarService } from './service/car.service';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [HttpClientModule, CommonModule, RouterOutlet, LoginComponent, FormsModule, CarListComponent],
+  imports: [HttpClientModule, CommonModule, RouterOutlet, LoginComponent, CarListComponent],
   providers: [CarService]
 })
 export class AppComponent {
